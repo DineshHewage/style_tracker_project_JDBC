@@ -4,6 +4,7 @@
  */
 package AddStyle;
 
+import DBConnection.DBConnection;
 import java.sql.*;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
@@ -199,8 +200,9 @@ public class AddStyle extends javax.swing.JFrame {
         String sql = "insert into styles values (?,?,?,?,?,?)";
         
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/styleTracker", "root", "Dinesh@12345");
+           // Class.forName("com.mysql.cj.jdbc.Driver");
+           // Connection con = DriverManager.getConnection("jdbc:mysql://localhost/styleTracker", "root", "Dinesh@12345");
+           Connection con = DBConnection.getDBConnection().getConnection();
             PreparedStatement prepStat = con.prepareStatement(sql);
             
             prepStat.setObject(1, styleNo);

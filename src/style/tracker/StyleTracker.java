@@ -39,5 +39,4 @@ public class StyleTracker {
             System.out.println(ex.getMessage());
         }
     }
-    
 }
